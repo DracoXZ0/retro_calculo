@@ -34,14 +34,8 @@ def tabla():
 
     cols_to_normalize = numero_de_columnas_D
 
-    df['D1'] = df['D1'] * (40 / df['Carga'])
-    df['D2'] = df['D2'] * (40 / df['Carga'])
-    df['D3'] = df['D3'] * (40 / df['Carga'])
-    df['D4'] = df['D4'] * (40 / df['Carga'])
-    df['D5'] = df['D5'] * (40 / df['Carga'])
-    df['D6'] = df['D6'] * (40 / df['Carga'])
-    df['D7'] = df['D7'] * (40 / df['Carga'])
-    df['D8'] = df['D8'] * (40 / df['Carga'])
+    for col in columnas_micras:
+        df[col] *= (40 / df['Carga'])
     #print(df)
 
     def calcular_FT(row, opcion):
